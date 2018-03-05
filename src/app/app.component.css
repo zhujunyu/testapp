@@ -42,6 +42,12 @@
   color: #EE3124;
 }
 
+.alert{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
 .item-title {
   width: 100%;
   height: 60px;
