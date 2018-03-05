@@ -23,13 +23,6 @@ export class AppComponent implements OnInit{
     // 雷达图
     this.hasRanderChart = true;
     this.radar = {
-      title: {
-        text: '基础雷达图'
-      },
-      tooltip: {},
-      legend: {
-        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-      },
       radar: {
         // shape: 'circle',
         name: {
@@ -41,26 +34,22 @@ export class AppComponent implements OnInit{
           }
         },
         indicator: [
-          { name: '销售（sales）', max: 6500},
-          { name: '管理（Administration）', max: 16000},
-          { name: '信息技术（Information Techology）', max: 30000},
-          { name: '客服（Customer Support）', max: 38000},
-          { name: '研发（Development）', max: 52000},
-          { name: '市场（Marketing）', max: 25000}
+          { name: '电压稳定性', max: 6500},
+          { name: '电压有效性', max: 16000},
+          { name: '温度整体偏差', max: 30000},
+          { name: '温度稳定性', max: 38000},
+          { name: '温度有效性', max: 52000},
+          { name: '电压整体偏差', max: 25000}
         ]
       },
       series: [{
-        name: '预算 vs 开销（Budget vs spending）',
+        name: '',
         type: 'radar',
         // areaStyle: {normal: {}},
         data : [
           {
             value : [4300, 10000, 28000, 35000, 50000, 19000],
             name : '预算分配（Allocated Budget）'
-          },
-          {
-            value : [5000, 14000, 28000, 31000, 42000, 21000],
-            name : '实际开销（Actual Spending）'
           }
         ]
       }]
@@ -68,22 +57,11 @@ export class AppComponent implements OnInit{
 
     this.lineChart  = {
       title : {
-        text: '雨量流量关系图',
-        subtext: '数据来自西安兰特水电测控技术有限公司',
         x: 'center',
         align: 'right'
       },
       grid: {
         bottom: 80
-      },
-      toolbox: {
-        feature: {
-          dataZoom: {
-            yAxisIndex: 'none'
-          },
-          restore: {},
-          saveAsImage: {}
-        }
       },
       tooltip : {
         trigger: 'axis',
@@ -96,8 +74,9 @@ export class AppComponent implements OnInit{
         }
       },
       legend: {
-        data:['流量','降雨量'],
-        x: 'left'
+        data:['温度','电压'],
+        x: 'right',
+        y: 'bottom'
       },
 
       xAxis : [
@@ -166,19 +145,16 @@ export class AppComponent implements OnInit{
       ],
       yAxis: [
         {
-          name: '流量(m^3/s)',
           type: 'value',
           max: 500
         },
         {
-          name: '降雨量(mm)',
           max: 5,
           type: 'value'
         }
       ],
       series: [
         {
-          name:'流量',
           type:'line',
           animation: false,
           areaStyle: {
@@ -202,7 +178,6 @@ export class AppComponent implements OnInit{
           ]
         },
         {
-          name:'降雨量',
           type:'line',
           yAxisIndex:1,
           animation: false,
