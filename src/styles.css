@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  padding: 1vw;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.space-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
