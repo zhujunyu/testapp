@@ -1,6 +1,6 @@
 .score-field {
   width: 100%;
-  height: 120px;
+  height: 100px;
 }
 
 .welder-name {
@@ -46,12 +46,13 @@
 .item-title {
   width: 100%;
   height: 60px;
-  font-size: 18px;
+  font-size: 24px;
   color: #FFFFFF;
   letter-spacing: -0.32px;
   line-height: 18px;
   opacity: 0.8;
   background: #041323;
+  border-bottom: rgb(134, 131, 131) solid 1px;
 }
 
 .success-back {
@@ -89,17 +90,18 @@
   line-height: 18px;
   opacity: 0.8;
   background: #041323;
+  border-bottom: rgb(136, 134, 134) solid 1px;
 }
 
 #rander {
-  width: 564px;
+  width: 30%;
   height: 505px;
   opacity: 0.8;
   background: #041323;
 }
 
 #line {
-  width: 1294px;
+  width: 70%;
   height: 505px;
   opacity: 0.8;
   background: #041323;
@@ -113,4 +115,24 @@
 .next-data {
   opacity: 0.8;
   background: #041323;
+}
+
+.upper-triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: 10px solid transparent;
+  border-bottom: 16px solid #EE3124;
+}
+
+.lower-triangle {
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top: 16px solid #EE3124;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 20px;
 }
