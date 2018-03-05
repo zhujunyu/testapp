@@ -57,8 +57,12 @@
   </div>
 </section>
 <section class="space-around">
-  <div id="rander"></div>
-  <div id="line"></div>
+  <div id="rander">
+    <echart [chartType]="radar" class="rander-chart"></echart>
+  </div>
+  <div id="line">
+    <echart [chartType]="lineChart" class="line-chart"></echart>
+  </div>
 </section>
 <section>
   <div class="item-title space-between next-field">
