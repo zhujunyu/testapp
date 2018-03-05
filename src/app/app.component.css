@@ -135,3 +135,15 @@
   margin-left: 20px;
   margin-top: 20px;
 }
+
+.rander-chart{
+  width:100%;
+  height:100%;
+  float:left;
+}
+
+.line-chart{
+  width:100%;
+  height:100%;
+  float:left;
+}
