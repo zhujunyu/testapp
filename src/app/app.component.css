@@ -16,7 +16,6 @@
 }
 
 .health-logo {
-  background-image: url('../assets/health.png');
   height: 25px;
   width: 23px;
 }
@@ -41,6 +40,12 @@
 
 .fail-score {
   color: #EE3124;
+}
+
+.alert{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 .item-title {
