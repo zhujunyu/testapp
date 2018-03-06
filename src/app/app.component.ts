@@ -68,27 +68,27 @@ export class AppComponent implements OnInit, AfterViewInit{
           },
           indicator: [
             {
-              name: '管',
+              name: '电压稳定性',
               max: 6000,
               color: '#45EBCA'
             }, {
-              name: '管理',
+              name: '电压  \n有效性',
               max: 16000,
               color: '#45EBCA'
             }, {
-              name: '信息技术',
+              name: '温度   \n整体偏差',
               max: 30000,
               color: '#CB21D2'
             }, {
-              name: '客服',
+              name: '温度稳定性',
               max: 38000,
               color: '#CB21D2'
             }, {
-              name: '研发',
+              name: '  温度\n有效性',
               max: 42000,
               color: '#CB21D2'
             }, {
-              name: '市场',
+              name: '   电压\n整体偏差',
               max: 25000,
               color: '#45EBCA'
             }
@@ -259,6 +259,9 @@ export class AppComponent implements OnInit, AfterViewInit{
                 globalCoord: false // 缺省为 false
               }
             },
+            itemStyle:{
+              color:'#CB21D2'  
+            },
             lineStyle: {
               color:'#CB21D2',
               width:3
@@ -286,6 +289,9 @@ export class AppComponent implements OnInit, AfterViewInit{
                 }],
                 globalCoord: false // 缺省为 false
               }
+            },
+            itemStyle:{
+              color:'#45EBCA'  
             },
             lineStyle: {
               color:'#45EBCA',
