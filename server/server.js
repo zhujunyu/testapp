@@ -30,40 +30,40 @@ app.get('/machine/:machineId/session/last',function(req,res){
         "predict_swaging_pressure": 2.0,
         "sampling_data": [
           {
-            "temp": 350.0,
+            "temp": 270.0,
             "voltage": 0.0125
           },
           {
-            "temp": 350.0,
-            "voltage": 0.0125
+            "temp": 280.0,
+            "voltage": 0.0225
+          },
+          {
+            "temp": 290.0,
+            "voltage": 0.0325
+          },
+          {
+            "temp": 300.0,
+            "voltage": 0.0425
+          },
+          {
+            "temp": 310.0,
+            "voltage": 0.0525
+          },
+          {
+            "temp": 320.0,
+            "voltage": 0.0625
+          },
+          {
+            "temp": 330.0,
+            "voltage": 0.0725
+          },
+          {
+            "temp": 340.0,
+            "voltage": 0.0825
           },
           {
             "temp": 350.0,
-            "voltage": 0.0125
-          },
-          {
-            "temp": 350.0,
-            "voltage": 0.0125
-          },
-          {
-            "temp": 350.0,
-            "voltage": 0.0125
-          },
-          {
-            "temp": 350.0,
-            "voltage": 0.0125
-          },
-          {
-            "temp": 350.0,
-            "voltage": 0.0125
-          },
-          {
-            "temp": 350.0,
-            "voltage": 0.0125
-          },
-          {
-            "temp": 350.0,
-            "voltage": 0.0125
+            "voltage": 0.0925
           },
           {
             "temp": 350.0,
