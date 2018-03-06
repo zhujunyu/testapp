@@ -191,7 +191,7 @@ export class AppComponent implements OnInit, AfterViewInit{
             splitLine:{
               show:false
             },
-            nameLocation:'start',
+            //nameLocation:'start',
             scale:true,
             axisLine:{
               onZero: false,
@@ -214,7 +214,7 @@ export class AppComponent implements OnInit, AfterViewInit{
             name: '(kV)',
             type: 'value',
             max:500,
-            nameLocation:'start',
+            //nameLocation:'start',
             scale:true,
             splitLine:{
               show:false
