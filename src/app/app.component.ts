@@ -66,6 +66,7 @@ export class AppComponent implements OnInit, AfterViewInit{
           splitArea: {
             show: false
           },
+
           indicator: [
             {
               name: '电压稳定性',
