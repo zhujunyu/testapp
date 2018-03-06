@@ -12,14 +12,26 @@ export class AppComponent implements OnInit{
   hasRanderChart: boolean;
   radar: any;
   lineChart: any;
+  data:any;
+  lastData:any;
 
   constructor(private appService: AppService) {
     this.hasRanderChart = false;
     this.radar = null;
     this.lineChart = null;
+    this.data = {};
+    this.lastData = {};
   }
 
   ngOnInit() {
+    this.getData();
+    // let that = this;
+    //
+    // // 每隔5秒请求一次数据
+    // setInterval(function(
+    //   that.getData();
+    // ), 5000);
+
     // 雷达图
     this.hasRanderChart = true;
     this.radar = {
@@ -205,5 +217,18 @@ export class AppComponent implements OnInit{
     };
 
 
+  }
+
+  getData() {
+
+    // // 数据没有变化，就不刷新页面
+    // if(this.lastData !== {} && this.lastData === this.data){
+    //
+    // }
+
+
+    this.appService.getData(60800001).subscribe((res:any) => {
+          this.data = res;
+    });
   }
 }
