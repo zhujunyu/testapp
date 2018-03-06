@@ -118,7 +118,14 @@ export class AppComponent implements OnInit{
 
     this.lineChart = {
       legend: {
-        data:['温度','电压'],
+        data:[
+          {name:'温度',icon:'rect',textStyle:{
+            color:'#CB21D2'
+          }},
+          {name:'电压',icon:'rect',textStyle:{
+            color:'#45EBCA'
+          }},
+        ],
         bottom:0,
         right:60,
       },
@@ -216,12 +223,24 @@ export class AppComponent implements OnInit{
           symbolSize:0,
           animation: false,
           areaStyle: {
-            normal: {}
+            opacity:0.3,
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: '#CB21D2' // 0% 处的颜色
+              }, {
+                offset: 1, color: '#041323' // 100% 处的颜色
+              }],
+              globalCoord: false // 缺省为 false
+            }
           },
           lineStyle: {
-            normal: {
-              width: 1
-            }
+            color:'#CB21D2',
+            width:3
           },
           data:[
             50, 51, 52,53, 54, 55, 56, 57, 58,59, 50, 51, 62, 63,
@@ -240,15 +259,24 @@ export class AppComponent implements OnInit{
           symbolSize:0,
           animation: false,
           areaStyle: {
-            normal: {}
-          },
-          lineStyle: {
-            normal: {
-              width: 1
+            opacity:0.3,
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: '#45EBCA' // 0% 处的颜色
+              }, {
+                offset: 1, color: '#041323' // 100% 处的颜色
+              }],
+              globalCoord: false // 缺省为 false
             }
           },
-          markArea: {
-            silent: true
+          lineStyle: {
+            color:'#45EBCA',
+            width:3
           },
           data: [
             0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
