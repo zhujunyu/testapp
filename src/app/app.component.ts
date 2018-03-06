@@ -73,11 +73,11 @@ export class AppComponent implements OnInit, AfterViewInit{
               max: 6000,
               color: '#45EBCA'
             }, {
-              name: '电压\n有效性',
+              name: '电压  \n有效性',
               max: 16000,
               color: '#45EBCA'
             }, {
-              name: '温度\n整体偏差',
+              name: '温度   \n整体偏差',
               max: 30000,
               color: '#CB21D2'
             }, {
@@ -85,11 +85,11 @@ export class AppComponent implements OnInit, AfterViewInit{
               max: 38000,
               color: '#CB21D2'
             }, {
-              name: '温度\n有效性',
+              name: '  温度\n有效性',
               max: 42000,
               color: '#CB21D2'
             }, {
-              name: '电压\n整体偏差',
+              name: '   电压\n整体偏差',
               max: 25000,
               color: '#45EBCA'
             }
@@ -260,6 +260,9 @@ export class AppComponent implements OnInit, AfterViewInit{
                 globalCoord: false // 缺省为 false
               }
             },
+            itemStyle:{
+              color:'#CB21D2'  
+            },
             lineStyle: {
               color:'#CB21D2',
               width:3
@@ -287,6 +290,9 @@ export class AppComponent implements OnInit, AfterViewInit{
                 }],
                 globalCoord: false // 缺省为 false
               }
+            },
+            itemStyle:{
+              color:'#45EBCA'  
             },
             lineStyle: {
               color:'#45EBCA',
