@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Http } from '@angular/http';
 
 declare var echarts;
 
@@ -12,7 +11,7 @@ export class EChartOptionDirective implements OnChanges {
 
   public elment: any;
 
-  constructor(private el: ElementRef, public http: Http) {}
+  constructor(private el: ElementRef) {}
 
   public ngOnChanges(changes: SimpleChanges) {
    this.elment = echarts.init(this.el.nativeElement);
