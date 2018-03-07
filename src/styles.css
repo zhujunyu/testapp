@@ -23,3 +23,16 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+@font-face{
+  font-family: HoneywellSans-Extrabold;
+  src: url('./assets/font/HoneywellSans-Extrabold.otf');
+}
+@font-face{
+  font-family: HoneywellSans-Bold;
+  src: url('./assets/font/HoneywellSans-Bold.otf');
+}
+@font-face{
+  font-family: HoneywellSans-Medium;
+  src: url('./assets/font/HoneywellSans-Medium.otf');
+}
