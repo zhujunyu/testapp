@@ -103,6 +103,7 @@
   height: 505px;
   opacity: 0.8;
   background: #041323;
+  position: relative;
 }
 
 #line {
@@ -145,11 +146,40 @@
 .rander-chart{
   width:100%;
   height:100%;
-  float:left;
+  position: absolute;
 }
 
 .line-chart{
   width:100%;
   height:100%;
   float:left;
+}
+
+.star-label{
+  position: absolute;
+  top:33%;
+  left:33%;
+  height:173px;
+  width:173px;
+  z-index:999;
+  opacity: 0.5;
+}
+
+.star-label-up{
+  display: block;
+  font-family: HoneywellSans-Light;
+  font-size: 144px;
+  color: #FFFFFF;
+  letter-spacing: -6px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+}
+
+.star-label-down{
+  display: block;
+  font-family: SourceHanSansCN-Normal;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: -0.43px;
+  line-height: 18px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
 }
