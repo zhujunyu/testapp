@@ -33,28 +33,28 @@
   </div>
   <div class="item-data space-between">
     <span class="first-item">人工设定参数</span>
-    <div class="item">
-      <span class="fail-score">{{data.setting_current}}</span>
+    <div class="item success-score">
+      <span [ngClass]="{'fail-score':data.setting_current_asc || data.setting_current_desc }">{{data.setting_current}}</span>
       <span  *ngIf="data.setting_current_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_current_desc" class="lower-triangle"></span>
     </div>
-    <div class="item">
-      <span [ngClass]="{fail-score:data.setting_pressure_asc || data.setting_pressure_desc }">{{data.setting_speed}}</span>
+    <div class="item success-score">
+      <span [ngClass]="{'fail-score':data.setting_speed_asc || data.setting_speed_desc }">{{data.setting_speed}}</span>
       <span  *ngIf="data.setting_speed_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_speed_desc" class="lower-triangle"></span>
     </div>
-    <div class="item ">
+    <div class="item success-score">
       <span [ngClass]="{'fail-score':data.setting_pressure_asc || data.setting_pressure_desc }">{{data.setting_pressure}}</span>
       <span  *ngIf="data.setting_pressure_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_pressure_desc" class="lower-triangle"></span>
     </div>
     <div class="item  success-score">
-      <span>{{data.setting_swaging_pressure}}</span>
+      <span [ngClass]="{'fail-score':data.setting_swaging_pressure_asc || data.setting_swaging_pressure_desc }">{{data.setting_swaging_pressure}}</span>
       <span  *ngIf="data.setting_swaging_pressure_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_swaging_pressure_desc" class="lower-triangle"></span>
     </div>
     <div class="item success-score">
-      <span>{{data.setting_lap_length}}</span>
+      <span [ngClass]="{'fail-score':data.setting_lap_length_asc || data.setting_lap_length_desc }">{{data.setting_lap_length}}</span>
       <span  *ngIf="data.setting_lap_length_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_lap_length_desc" class="lower-triangle"></span>
     </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from './app.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,6 @@ import { Observable } from 'rxjs';
   providers: [AppService]
 })
 export class AppComponent implements OnInit, AfterViewInit{
-  title = 'app';
   hasRanderChart: boolean;
   radar: any;
   lineChart: any;
@@ -25,12 +23,11 @@ export class AppComponent implements OnInit, AfterViewInit{
     this.lastData = {};
   }
 
-  // 每一秒更新时间差
+  // 每5秒刷新一次页面
   ngAfterViewInit() {
     this.timer = setInterval(() => {
-      console.log('haha');
       this.getData();
-    }, 1000);
+    }, 5000);
   }
 
   ngOnInit() {
@@ -41,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit{
     this.appService.getData(60800001).subscribe((res:any) => {
 
       // 数据没有变化，就不刷新页面
-      if(this.lastData !== {} && this.lastData === this.res){
+      if(this.lastData !== {} && this.lastData === res){
         return;
       }
       this.data = res;
@@ -249,7 +246,7 @@ export class AppComponent implements OnInit, AfterViewInit{
 
           },
           {
-            name: '(kV)',
+            name: '(V)',
             type: 'value',
             max:500,
             //nameLocation:'start',
