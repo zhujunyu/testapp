@@ -33,18 +33,18 @@
   </div>
   <div class="item-data space-between">
     <span class="first-item">人工设定参数</span>
-    <div class="item success-score">
-      <span>{{data.setting_current}}</span>
+    <div class="item">
+      <span class="fail-score">{{data.setting_current}}</span>
       <span  *ngIf="data.setting_current_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_current_desc" class="lower-triangle"></span>
     </div>
-    <div class="item success-score">
-      <span>{{data.setting_speed}}</span>
+    <div class="item">
+      <span [ngClass]="{fail-score:data.setting_pressure_asc || data.setting_pressure_desc }">{{data.setting_speed}}</span>
       <span  *ngIf="data.setting_speed_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_speed_desc" class="lower-triangle"></span>
     </div>
-    <div class="item success-score">
-      <span>{{data.setting_pressure}}</span>
+    <div class="item ">
+      <span [ngClass]="{'fail-score':data.setting_pressure_asc || data.setting_pressure_desc }">{{data.setting_pressure}}</span>
       <span  *ngIf="data.setting_pressure_asc" class="upper-triangle"></span>
       <span *ngIf="data.setting_pressure_desc" class="lower-triangle"></span>
     </div>
@@ -75,7 +75,7 @@
 </section>
 <section>
   <div class="item-title space-between next-field">
-    <span class="first-item">下次钢卷号: 55421342</span>
+    <span class="first-item">下次钢卷号: -</span>
     <span class="item">电流(kA)</span>
     <span class="item">速度(m/min)</span>
     <span class="item">焊轮压力(kN)</span>
@@ -85,11 +85,11 @@
   </div>
   <div class="item-data space-between next-data">
     <span class="first-item">智能推荐参数</span>
-    <span class="item">14</span>
-    <span class="item">15</span>
-    <span class="item">8</span>
-    <span class="item">1</span>
-    <span class="item">10</span>
-    <span class="item">8</span>
+    <span class="item">-</span>
+    <span class="item">-</span>
+    <span class="item">-</span>
+    <span class="item">-</span>
+    <span class="item">-</span>
+    <span class="item">-</span>
   </div>
 </section>

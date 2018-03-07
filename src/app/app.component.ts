@@ -39,11 +39,13 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   getData() {
     this.appService.getData(60800001).subscribe((res:any) => {
+
       // 数据没有变化，就不刷新页面
-      if(this.lastData !== {} && this.lastData === this.data){
+      if(this.lastData !== {} && this.lastData === this.res){
         return;
       }
       this.data = res;
+      this.lastData = res;
 
       let tempArr = [];
       let voltageArr = [];
@@ -87,8 +89,6 @@ export class AppComponent implements OnInit, AfterViewInit{
       } else if(res.setting_lap_compe < res.predict_lap_compe){
         this.data.setting_lap_compe_desc = true;
       }
-
-      this.lastData = this.data;
 
       // 雷达图
       this.hasRanderChart = true;
