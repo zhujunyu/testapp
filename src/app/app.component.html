@@ -1,7 +1,7 @@
 <section class="space-between score-field">
   <img class="logo" src="../assets/logo.png" alt="baosteel">
   <div>
-    <div class="welder-name">焊机A-006</div>
+    <div class="welder-name">焊机{{data.machine_name}}</div>
     <div class="space-around">
       <img class="health-logo" src="../assets/health.png" alt="baosteel">
       <span class="health-desc">健康评分：</span>
@@ -13,7 +13,7 @@
   <div class="item-title success-back space-between">
     <div class="center first-item">
     <img  class="alert"  src="../assets/alert.png" alt="警告">
-    <span class="">上次钢卷号: 55421342</span>
+    <span class="">上次钢卷号: {{data.coil_id}}</span>
   </div>
     <span class="item">电流(kA)</span>
     <span class="item">速度(m/min)</span>

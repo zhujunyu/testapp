@@ -141,10 +141,10 @@ export class AppComponent implements OnInit, AfterViewInit{
       this.lineChart = {
         legend: {
           data:[
-            {name:'温度',icon:'rect',textStyle:{
+            {name:'温度', icon:'rect', textStyle:{
               color:'#CB21D2'
             }},
-            {name:'电压',icon:'rect',textStyle:{
+            {name:'电压', icon:'rect', textStyle:{
               color:'#45EBCA'
             }},
           ],
@@ -261,7 +261,7 @@ export class AppComponent implements OnInit, AfterViewInit{
               }
             },
             itemStyle:{
-              color:'#CB21D2'  
+              color:'#CB21D2'
             },
             lineStyle: {
               color:'#CB21D2',
@@ -292,7 +292,7 @@ export class AppComponent implements OnInit, AfterViewInit{
               }
             },
             itemStyle:{
-              color:'#45EBCA'  
+              color:'#45EBCA'
             },
             lineStyle: {
               color:'#45EBCA',
