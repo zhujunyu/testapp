@@ -19,8 +19,8 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   constructor(private appService: AppService) {
     this.hasRanderChart = false;
-    this.radar = null;
-    this.lineChart = null;
+    this.radar = {};
+    this.lineChart = {};
     this.data = {};
     this.lastData = {};
   }
@@ -44,7 +44,6 @@ export class AppComponent implements OnInit, AfterViewInit{
         return;
       }
       this.data = res;
-      this.lastData = res;
 
       let tempArr = [];
       let voltageArr = [];
@@ -52,6 +51,44 @@ export class AppComponent implements OnInit, AfterViewInit{
            tempArr.push(item.temp);
            voltageArr.push(item.voltage * 1000);
       });
+
+      if(res.setting_current > res.predict_current){
+        this.data.setting_current_asc = true;
+      } else if(res.setting_current < res.predict_current){
+        this.data.setting_current_desc = true;
+      }
+
+      if(res.setting_speed > res.predict_speed){
+        this.data.setting_speed_asc = true;
+      } else if(res.setting_speed < res.predict_speed){
+        this.data.setting_speed_desc = true;
+      }
+
+      if(res.setting_pressure > res.predict_pressure){
+        this.data.setting_pressure_asc = true;
+      } else if(res.setting_pressure < res.predict_pressure){
+        this.data.setting_pressure_desc = true;
+      }
+
+      if(res.setting_swaging_pressure > res.predict_swaging_pressure){
+        this.data.setting_swaging_pressure_asc = true;
+      } else if(res.setting_swaging_pressure < res.predict_swaging_pressure){
+        this.data.setting_swaging_pressure_desc = true;
+      }
+
+      if(res.setting_lap_length > res.predict_lap_length){
+        this.data.setting_lap_length_asc = true;
+      } else if(res.setting_lap_length < res.predict_lap_length){
+        this.data.setting_lap_length_desc = true;
+      }
+
+      if(res.setting_lap_compe > res.predict_lap_compe){
+        this.data.setting_lap_compe_asc = true;
+      } else if(res.setting_lap_compe < res.predict_lap_compe){
+        this.data.setting_lap_compe_desc = true;
+      }
+
+      this.lastData = this.data;
 
       // 雷达图
       this.hasRanderChart = true;

@@ -35,27 +35,33 @@
     <span class="first-item">人工设定参数</span>
     <div class="item success-score">
       <span>{{data.setting_current}}</span>
-      <span class="upper-triangle"></span>
+      <span  *ngIf="data.setting_current_asc" class="upper-triangle"></span>
+      <span *ngIf="data.setting_current_desc" class="lower-triangle"></span>
     </div>
     <div class="item success-score">
       <span>{{data.setting_speed}}</span>
-      <span class="lower-triangle"></span>
+      <span  *ngIf="data.setting_speed_asc" class="upper-triangle"></span>
+      <span *ngIf="data.setting_speed_desc" class="lower-triangle"></span>
     </div>
     <div class="item success-score">
       <span>{{data.setting_pressure}}</span>
-      <span class="upper-triangle"></span>
+      <span  *ngIf="data.setting_pressure_asc" class="upper-triangle"></span>
+      <span *ngIf="data.setting_pressure_desc" class="lower-triangle"></span>
     </div>
     <div class="item  success-score">
       <span>{{data.setting_swaging_pressure}}</span>
-      <span class="upper-triangle"></span>
+      <span  *ngIf="data.setting_swaging_pressure_asc" class="upper-triangle"></span>
+      <span *ngIf="data.setting_swaging_pressure_desc" class="lower-triangle"></span>
     </div>
     <div class="item success-score">
       <span>{{data.setting_lap_length}}</span>
-      <span class="upper-triangle"></span>
+      <span  *ngIf="data.setting_lap_length_asc" class="upper-triangle"></span>
+      <span *ngIf="data.setting_lap_length_desc" class="lower-triangle"></span>
     </div>
     <div class="item success-score">
       <span>{{data.setting_lap_compe}}</span>
-      <span class="upper-triangle"></span>
+      <span  *ngIf="data.setting_lap_compe_asc" class="upper-triangle"></span>
+      <span *ngIf="data.setting_lap_compe_desc" class="lower-triangle"></span>
     </div>
   </div>
 </section>
