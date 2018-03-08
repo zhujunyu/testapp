@@ -46,8 +46,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.data = JSON.parse(JSON.stringify(res));
       this.lastData = JSON.parse(JSON.stringify(res));;
 
-      let tempArr = [];
-      let voltageArr = [];
+      const tempArr = [];
+      const voltageArr = [];
       this.data.sampling_data && this.data.sampling_data.forEach(item => {
         tempArr.push(item.temp);
         voltageArr.push(item.voltage * 1000);
@@ -106,27 +106,27 @@ export class AppComponent implements OnInit, AfterViewInit {
           indicator: [
             {
               name: '电压稳定性',
-              max: 6000,
+              max: 5,
               color: '#45EBCA'
             }, {
               name: '电压  \n有效性',
-              max: 16000,
+              max: 5,
               color: '#45EBCA'
             }, {
               name: '温度   \n整体偏差',
-              max: 30000,
+              max: 5,
               color: '#CB21D2'
             }, {
               name: '温度稳定性',
-              max: 38000,
+              max: 5,
               color: '#CB21D2'
             }, {
               name: '  温度\n有效性',
-              max: 42000,
+              max: 5,
               color: '#CB21D2'
             }, {
               name: '   电压\n整体偏差',
-              max: 25000,
+              max: 5,
               color: '#45EBCA'
             }
           ]
@@ -161,12 +161,12 @@ export class AppComponent implements OnInit, AfterViewInit {
             data: [
               {
                 value: [
-                  5000,
-                  14000,
-                  28000,
-                  31000,
-                  42000,
-                  21000
+                  this.data.v_rationality_level,
+                  this.data.v_length_level,
+                  this.data.t_volatility_level,
+                  this.data.t_rationality_level,
+                  this.data.t_length_level,
+                  this.data.v_volatility_level
                 ]
               }
             ]
