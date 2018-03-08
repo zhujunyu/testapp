@@ -124,23 +124,21 @@
 }
 
 .upper-triangle {
-  width: 0;
-  height: 0;
+  width: 10px;
+  height: 16px;
   position: absolute;
-  margin-left: 20px;
-  margin-top: 10px;
-  border: 10px solid transparent;
-  border-bottom: 16px solid #EE3124;
+  margin-left: 8px;
+  margin-top: 22px;
+  background-image: url('/assets/icon_arrow_up.png');
 }
 
 .lower-triangle {
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-top: 16px solid #EE3124;
+  width: 10px;
+  height: 16px;
   position: absolute;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 8px;
+  margin-top: 22px;
+  background-image: url('/assets/icon_arrow_down.png');
 }
 
 .rander-chart{
@@ -158,7 +156,7 @@
 .star-label{
   position: absolute;
   top:33.5%;
-  left:33.5%;
+  left:37%;
   height:173px;
   width:173px;
   z-index:999;
@@ -167,7 +165,6 @@
 
 .star-label-up{
   display: block;
-  font-family: HoneywellSans-Light;
   font-size: 144px;
   color: #FFFFFF;
   letter-spacing: -6px;
@@ -176,10 +173,10 @@
 
 .star-label-down{
   display: block;
-  font-family: SourceHanSansCN-Normal;
   font-size: 24px;
   color: #FFFFFF;
   letter-spacing: -0.43px;
   line-height: 18px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  margin-top: -15px;
 }
