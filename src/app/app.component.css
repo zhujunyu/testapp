@@ -57,7 +57,7 @@
   line-height: 18px;
   opacity: 0.8;
   background: #041323;
-  border-bottom: rgb(134, 131, 131) solid 1px;
+  margin-bottom: 2px;
 }
 
 .success-back {
@@ -100,7 +100,7 @@
   line-height: 18px;
   opacity: 0.8;
   background: #041323;
-  border-bottom: rgb(136, 134, 134) solid 1px;
+  margin-bottom: 2px;
 }
 
 #rander {
@@ -109,6 +109,7 @@
   opacity: 0.8;
   background: #041323;
   position: relative;
+  margin-right: 2px;
 }
 
 #line {
