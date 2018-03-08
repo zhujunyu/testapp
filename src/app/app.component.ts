@@ -89,6 +89,13 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.data.setting_lap_compe_desc = true;
       }
 
+      // 温度的最大值和最小值 tempArr
+      let temp_max = Math.ceil(Math.max.apply(null, tempArr));
+      let temp_min = Math.floor(Math.min.apply(null, tempArr));
+      // 电压的最大值和最小值 voltageArr
+      let voltage_max = Math.ceil(Math.max.apply(null, voltageArr));
+      let voltage_min = Math.floor(Math.min.apply(null, voltageArr));
+
       // 雷达图
       this.hasRanderChart = true;
       this.radar = {
@@ -228,7 +235,8 @@ export class AppComponent implements OnInit, AfterViewInit {
           {
             name: '(℃)',
             type: 'value',
-            max: 1000,
+            max: temp_max,
+            min: temp_min,
             splitLine: {
               show: false
             },
@@ -254,7 +262,8 @@ export class AppComponent implements OnInit, AfterViewInit {
           {
             name: '(V)',
             type: 'value',
-            max: 500,
+            max: voltage_max,
+            min: voltage_min,
             //nameLocation:'start',
             scale: true,
             splitLine: {
