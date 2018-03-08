@@ -19,6 +19,7 @@ app.use('/*', function (req, res, next) {
 app.get('/machine/:machineId/session/last',function(req,res){
   var result =
       {
+        "seam_score_ok": false,
         "machine_name": 'A-006',
         "coil_id": 55421342,
         "current_machine_score": 86,

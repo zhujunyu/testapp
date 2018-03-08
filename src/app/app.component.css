@@ -65,6 +65,11 @@
   opacity: 0.8;
 }
 
+.error-back {
+  background: #DE503A;
+  opacity: 0.8;
+}
+
 .fail-backgroud {
   opacity: 0.8;
   background: #DE503A;

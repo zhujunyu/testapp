@@ -10,9 +10,11 @@
   </div>
 </section>
 <section>
-  <div class="item-title success-back space-between">
+  <div class="item-title space-between" [ngClass]="{'success-back':data.seam_score_ok,'error-back':!data.seam_score_ok}">
     <div class="center first-item">
-    <img  class="alert"  src="../assets/alert.png" alt="警告">
+    <div *ngIf="!data.seam_score_ok">
+      <img class="alert"  src="../assets/alert.png" alt="警告">
+    </div>
     <span class="">上次钢卷号: {{data.coil_id}}</span>
   </div>
     <span class="item">电流(kA)</span>
