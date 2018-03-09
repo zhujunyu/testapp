@@ -76,7 +76,7 @@
 }
 
 .first-item {
-  width: 20vw;
+  width: 25vw;
   height: 60px;
   text-align: center;
   font-size: 24px;
@@ -86,7 +86,7 @@
 
 .item {
   height: 60px;
-  width: 13vw;
+  width: 11vw;
   line-height: 60px;
   text-align: center;
 }

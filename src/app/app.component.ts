@@ -96,6 +96,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       let voltage_max = Math.ceil(Math.max.apply(null, voltageArr)/100)*100;
       let voltage_min = Math.floor(Math.min.apply(null, voltageArr)/100)*100;
 
+      if(this.data.current_machine_score === undefined || this.data.current_machine_score == ''){
+        this.data.current_machine_score = '-';
+      }
       // 雷达图
       this.hasRanderChart = true;
       this.radar = {
