@@ -22,7 +22,7 @@ app.get('/machine/:machineId/session/last',function(req,res){
         "seam_score_ok": false,
         "machine_name": '焊机A-006',
         "coil_id": '209152500_209041000',
-        "current_machine_score": 86,
+
         "date": "2017-12-22 12:05:14",
         "machine_id": 60800001,
         "predict_current": 12.0,
