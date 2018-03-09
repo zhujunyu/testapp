@@ -108,17 +108,16 @@ export class AppComponent implements OnInit, AfterViewInit {
             name: '业务指标',
             type: 'gauge',
             detail: {formatter:'{value}'},
-            data: [{value: 50, name: '焊接质量评分'}],
+            data: [{value: this.data.seam_score, name: '焊接质量评分'}],
             axisTick:{
-              show:false,
+              show: false,
               lineStyle:{
                 color:'rgba(128, 128, 128, 0.5)'
               }
             },
             axisLine:{
-              show: false,
               lineStyle:{
-                color:[[0.2, '#DE503A'], [0.8, '#F8E71C'], [1, '#94C92B']]
+                color:[[this.data.seam_score_hard_spec/100, '#DE503A'], [this.data.seam_score_soft_spec/100, '#F8E71C'], [1, '#94C92B']]
               }
             },
             splitLine:{
