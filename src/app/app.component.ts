@@ -100,19 +100,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.hasRanderChart = true;
       this.radar = {
         tooltip : {
-          formatter: "{a} <br/>{b} : {c}%"
+          formatter: "{b} : {c}"
         },
-        toolbox: {
-          feature: {
-            restore: {},
-            saveAsImage: {}
-          }
-        },
+
         series: [
           {
             name: '业务指标',
             type: 'gauge',
-            detail: {formatter:'{value}%'},
+            detail: {formatter:'{value}'},
             data: [{value: 50, name: '焊接质量评分'}],
             axisTick:{
               show:false,
