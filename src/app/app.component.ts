@@ -99,87 +99,129 @@ export class AppComponent implements OnInit, AfterViewInit {
       // 雷达图
       this.hasRanderChart = true;
       this.radar = {
-        radar: {
-          name: {
-            textStyle: {
-              borderRadius: 3,
-              padding: [3, 5]
-            }
-          },
-          splitArea: {
-            show: false
-          },
-
-          indicator: [
-            {
-              name: '电压稳定性',
-              max: 5,
-              color: '#45EBCA'
-            }, {
-              name: '电压  \n有效性',
-              max: 5,
-              color: '#45EBCA'
-            }, {
-              name: '温度   \n整体偏差',
-              max: 5,
-              color: '#CB21D2'
-            }, {
-              name: '温度稳定性',
-              max: 5,
-              color: '#CB21D2'
-            }, {
-              name: '  温度\n有效性',
-              max: 5,
-              color: '#CB21D2'
-            }, {
-              name: '   电压\n整体偏差',
-              max: 5,
-              color: '#45EBCA'
-            }
-          ]
+        tooltip : {
+          formatter: "{a} <br/>{b} : {c}%"
+        },
+        toolbox: {
+          feature: {
+            restore: {},
+            saveAsImage: {}
+          }
         },
         series: [
           {
-            type: 'radar',
-            lineStyle: {
-              width: 0
-            },
-            symbolSize: 0,
-            label: {},
-            areaStyle: {
-              color: {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: '#45EBCA' // 0% 处的颜色
-                  }, {
-                    offset: 1,
-                    color: '#CB21D2' // 100% 处的颜色
-                  }
-                ],
-                globalCoord: false // 缺省为 false
+            name: '业务指标',
+            type: 'gauge',
+            detail: {formatter:'{value}%'},
+            data: [{value: 50, name: '焊接质量评分'}],
+            axisTick:{
+              show:false,
+              lineStyle:{
+                color:'rgba(128, 128, 128, 0.5)'
               }
             },
-            data: [
-              {
-                value: [
-                  this.data.v_rationality_level,
-                  this.data.v_length_level,
-                  this.data.t_volatility_level,
-                  this.data.t_rationality_level,
-                  this.data.t_length_level,
-                  this.data.v_volatility_level
-                ]
+            axisLine:{
+              show: false,
+              lineStyle:{
+                color:[[0.2, '#DE503A'], [0.8, '#F8E71C'], [1, '#94C92B']]
               }
-            ]
+            },
+            splitLine:{
+              lineStyle:{
+                color:'rgba（0,0,0,0）'
+              }
+            },
+            itemStyle: {
+              opacity: 0.8
+            },
+            title: {
+              color: '#ffffff'
+            }
           }
         ]
       };
+      // this.radar = {
+      //   radar: {
+      //     name: {
+      //       textStyle: {
+      //         borderRadius: 3,
+      //         padding: [3, 5]
+      //       }
+      //     },
+      //     splitArea: {
+      //       show: false
+      //     },
+      //
+      //     indicator: [
+      //       {
+      //         name: '电压稳定性',
+      //         max: 5,
+      //         color: '#45EBCA'
+      //       }, {
+      //         name: '电压  \n有效性',
+      //         max: 5,
+      //         color: '#45EBCA'
+      //       }, {
+      //         name: '温度   \n整体偏差',
+      //         max: 5,
+      //         color: '#CB21D2'
+      //       }, {
+      //         name: '温度稳定性',
+      //         max: 5,
+      //         color: '#CB21D2'
+      //       }, {
+      //         name: '  温度\n有效性',
+      //         max: 5,
+      //         color: '#CB21D2'
+      //       }, {
+      //         name: '   电压\n整体偏差',
+      //         max: 5,
+      //         color: '#45EBCA'
+      //       }
+      //     ]
+      //   },
+      //   series: [
+      //     {
+      //       type: 'radar',
+      //       lineStyle: {
+      //         width: 0
+      //       },
+      //       symbolSize: 0,
+      //       label: {},
+      //       areaStyle: {
+      //         color: {
+      //           type: 'linear',
+      //           x: 0,
+      //           y: 0,
+      //           x2: 0,
+      //           y2: 1,
+      //           colorStops: [
+      //             {
+      //               offset: 0,
+      //               color: '#45EBCA' // 0% 处的颜色
+      //             }, {
+      //               offset: 1,
+      //               color: '#CB21D2' // 100% 处的颜色
+      //             }
+      //           ],
+      //           globalCoord: false // 缺省为 false
+      //         }
+      //       },
+      //       data: [
+      //         {
+      //           value: [
+      //             this.data.v_rationality_level,
+      //             this.data.v_length_level,
+      //             this.data.t_volatility_level,
+      //             this.data.t_rationality_level,
+      //             this.data.t_length_level,
+      //             this.data.v_volatility_level
+      //           ]
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // };
 
       this.lineChart = {
         legend: {
