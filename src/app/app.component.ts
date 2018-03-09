@@ -90,11 +90,11 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
 
       // 温度的最大值和最小值 tempArr
-      let temp_max = Math.ceil(Math.max.apply(null, tempArr));
-      let temp_min = Math.floor(Math.min.apply(null, tempArr));
+      let temp_max = Math.ceil(Math.max.apply(null, tempArr)/100)*100;
+      let temp_min = Math.floor(Math.min.apply(null, tempArr)/100)*100;
       // 电压的最大值和最小值 voltageArr
-      let voltage_max = Math.ceil(Math.max.apply(null, voltageArr));
-      let voltage_min = Math.floor(Math.min.apply(null, voltageArr));
+      let voltage_max = Math.ceil(Math.max.apply(null, voltageArr)/100)*100;
+      let voltage_min = Math.floor(Math.min.apply(null, voltageArr)/100)*100;
 
       // 雷达图
       this.hasRanderChart = true;
@@ -218,7 +218,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               onZero: false,
               lineStyle: {
                 color: '#fff',
-                width: 4
+                width: 1
               }
             },
             axisTick: {
@@ -226,7 +226,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               length: 8,
               lineStyle: {
                 color: '#fff',
-                width: 3
+                width: 1
               }
             }
           }
@@ -246,7 +246,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               onZero: false,
               lineStyle: {
                 color: '#fff',
-                width: 4
+                width: 1
               }
             },
             axisTick: {
@@ -254,7 +254,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               length: 8,
               lineStyle: {
                 color: '#fff',
-                width: 3
+                width: 1
               }
             }
 
@@ -273,7 +273,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               onZero: false,
               lineStyle: {
                 color: '#fff',
-                width: 4
+                width: 1
               }
             },
             axisTick: {
@@ -281,7 +281,7 @@ export class AppComponent implements OnInit, AfterViewInit {
               length: 8,
               lineStyle: {
                 color: '#fff',
-                width: 3
+                width: 1
               }
             }
 

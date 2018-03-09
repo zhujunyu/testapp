@@ -1,7 +1,7 @@
 <section class="space-between score-field">
   <img class="logo" src="../assets/logo.png" alt="baosteel">
   <div>
-    <div class="welder-name">焊机{{data.machine_name}}</div>
+    <div class="welder-name" style="font-weight:bold">焊机{{data.machine_name}}</div>
     <div class="space-around">
       <img class="health-logo" src="../assets/health.png" alt="baosteel">
       <span class="health-desc">健康评分：</span>
@@ -15,7 +15,7 @@
     <div *ngIf="'!data.seam_score_ok'">
       <img class="alert"  src="../assets/alert.png" alt="警告">
     </div>
-    <span class="">上次钢卷号: {{data.coil_id}}</span>
+    <span style="font-weight:bold">上次钢卷号: {{data.coil_id}}</span>
   </div>
     <span class="item">电流(kA)</span>
     <span class="item">速度(m/min)</span>
@@ -83,7 +83,7 @@
 </section>
 <section>
   <div class="item-title space-between next-field">
-    <span class="first-item">下次钢卷号: -</span>
+    <span class="first-item" style="font-weight:bold">下次钢卷号: -</span>
     <span class="item">电流(kA)</span>
     <span class="item">速度(m/min)</span>
     <span class="item">焊轮压力(kN)</span>
