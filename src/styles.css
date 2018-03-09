@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
 body {
+  font-family: "Honeywell Sans", "Microsoft YaHei", "微软雅黑",
+  "Segoe UI", Roboto,
+  "Helvetica Neue", Arial,
+  sans-serif;
   padding: 1vw;
   margin: 0;
   background: url('./assets/bg.png')
@@ -25,15 +28,37 @@ body {
   justify-content: space-between;
 }
 
-@font-face{
-  font-family: HoneywellSans-Extrabold;
-  src: url('./assets/font/HoneywellSans-Extrabold.otf');
+@font-face {
+  font-family: 'Honeywell Sans';
+  src: url('./assets/font/SourceHanSansCN-Normal.otf') format('otf');
+  font-weight: 900;
+  font-style: normal;
 }
-@font-face{
-  font-family: HoneywellSans-Bold;
-  src: url('./assets/font/HoneywellSans-Bold.otf');
+
+@font-face {
+  font-family: 'Honeywell Sans';
+  src: url('./assets/font/HoneywellSansWeb-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
 }
-@font-face{
-  font-family: HoneywellSans-Medium;
-  src: url('./assets/font/HoneywellSans-Medium.otf');
+
+@font-face {
+  font-family: 'Honeywell Sans';
+  src: url('./assets/font/HoneywellSansWeb-Book.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Honeywell Sans';
+  src: url('./assets/font/HoneywellSansWeb-Medium.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Honeywell Sans';
+  src: url('./assets/font/HoneywellSansWeb-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
 }
