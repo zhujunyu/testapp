@@ -20,8 +20,8 @@ app.get('/machine/:machineId/session/last',function(req,res){
   var result =
       {
         "seam_score_ok": false,
-        "machine_name": 'A-006',
-        "coil_id": 55421342,
+        "machine_name": '焊机A-006',
+        "coil_id": '209152500_209041000',
         "current_machine_score": 86,
         "date": "2017-12-22 12:05:14",
         "machine_id": 60800001,
@@ -433,8 +433,6 @@ app.get('/machine/:machineId/session/last',function(req,res){
             "voltage": 0.0175
           }
         ],
-        "seam_score": 84,
-        "seam_score_ok": true,
         "session_id": 1513915514000,
         "setting_current": 13.0,
         "setting_lap_compe": 0.5,
@@ -447,7 +445,11 @@ app.get('/machine/:machineId/session/last',function(req,res){
         "t_volatility_level": 5,
         "v_length_level": 5,
         "v_rationality_level": 4,
-        "v_volatility_level": 5
+        "v_volatility_level": 5,
+        "seam_score": 60,
+        "seam_score_hard_spec": 60,
+        "seam_score_ok": true,
+        "seam_score_soft_spec": 80,
       }
     ;
   res.json(result);
