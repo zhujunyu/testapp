@@ -44,13 +44,14 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       // 深拷贝
       this.data = JSON.parse(JSON.stringify(res));
-      this.lastData = JSON.parse(JSON.stringify(res));;
+      this.lastData = JSON.parse(JSON.stringify(res));
+      ;
 
       const tempArr = [];
       const voltageArr = [];
       this.data.sampling_data && this.data.sampling_data.forEach(item => {
         tempArr.push(item.temp);
-        voltageArr.push(item.voltage * 1000);
+        voltageArr.push(item.voltage);
       });
 
       if (res.setting_current > res.predict_current) {
@@ -90,19 +91,22 @@ export class AppComponent implements OnInit, AfterViewInit {
       }
 
       // 温度的最大值和最小值 tempArr
-      let temp_max = Math.ceil(Math.max.apply(null, tempArr)/100)*100;
-      let temp_min = Math.floor(Math.min.apply(null, tempArr)/100)*100;
+      let temp_max = Math.ceil(Math.max.apply(null, tempArr) / 100) * 100;
+      let temp_min = Math.floor(Math.min.apply(null, tempArr) / 100) * 100;
       // 电压的最大值和最小值 voltageArr
-      let voltage_max = Math.ceil(Math.max.apply(null, voltageArr)/100)*100;
-      let voltage_min = Math.floor(Math.min.apply(null, voltageArr)/100)*100;
+      let voltage_max = Math.ceil(Math.max.apply(null, voltageArr) );
+      let voltage_min = Math.floor(Math.min.apply(null, voltageArr));
 
-      if(this.data.current_machine_score === undefined || this.data.current_machine_score == ''){
+      if (this.data.current_machine_score === undefined || this.data.current_machine_score == '') {
         this.data.current_machine_score = '-';
       }
+
+      this.data.seamScoreOk = this.data.seam_score_ok;
+
       // 雷达图
       this.hasRanderChart = true;
       this.radar = {
-        tooltip : {
+        tooltip: {
           formatter: "{b} : {c}"
         },
 
@@ -111,22 +115,22 @@ export class AppComponent implements OnInit, AfterViewInit {
             name: '业务指标',
             type: 'gauge',
             data: [{value: this.data.seam_score, name: '焊接质量评分'}],
-            axisTick:{
+            axisTick: {
               show: false,
-              lineStyle:{
+              lineStyle: {
                 color: 'rgba(128, 128, 128, 0.5)'
               }
             },
-            axisLine:{
-              lineStyle:{
-                color: [[this.data.seam_score_hard_spec/100, '#DE503A'], [this.data.seam_score_soft_spec/100, '#F8E71C'], [1, '#94C92B']],
+            axisLine: {
+              lineStyle: {
+                color: [[this.data.seam_score_hard_spec / 100, '#DE503A'], [this.data.seam_score_soft_spec / 100, '#F8E71C'], [1, '#94C92B']],
                 width: 20
               }
             },
-            splitLine:{
+            splitLine: {
               length: 20,
-              lineStyle:{
-                color:'rgba（0,0,0,0）'
+              lineStyle: {
+                color: 'rgba（0,0,0,0）'
               }
             },
             itemStyle: {
@@ -134,7 +138,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             },
             title: {
               color: '#ffffff',
-              fontSize:18
+              fontSize: 18
             },
             detail: {
               fontSize: 100
@@ -246,7 +250,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         xAxis: [
           {
             type: 'category',
-            boundaryGap: ['20%', '20%'],
             data: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
               14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
               26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
@@ -256,145 +259,150 @@ export class AppComponent implements OnInit, AfterViewInit {
               77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89,
               90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
             ],
-            splitNumber: 5,
-            interval: 20,
-            axisLine: {
-              onZero: false,
-              lineStyle: {
+            minInterval:10,
+            axisLine:{
+                onZero: true,
+                lineStyle:{
                 color: '#fff',
                 width: 1
-              }
-            },
-            axisTick: {
-              alignWithLabel: true,
-              length: 8,
-              lineStyle: {
-                color: '#fff',
-                width: 1
-              }
-            }
-          }
-        ],
-        yAxis: [
-          {
-            name: '(℃)',
-            type: 'value',
-            max: temp_max,
-            min: temp_min,
-            splitLine: {
-              show: false
-            },
-            //nameLocation:'start',
-            scale: true,
-            axisLine: {
-              onZero: false,
-              lineStyle: {
-                color: '#fff',
-                width: 1
-              }
-            },
-            axisTick: {
-              alignWithLabel: true,
-              length: 8,
-              lineStyle: {
-                color: '#fff',
-                width: 1
-              }
-            }
-
+                }
+      },
+      axisLabel:{
+        interval:19
+      },
+      axisTick: {
+        interval: 19,
+          alignWithLabel: true,
+          length: 8,
+          lineStyle: {
+          color: '#fff',
+            width: 1
+        }
+      }
+    }
+    ],
+      yAxis: [
+        {
+          name: '(℃)',
+          type: 'value',
+          max: temp_max,
+          min: temp_min,
+          splitLine: {
+            show: false
           },
-          {
-            name: '(V)',
-            type: 'value',
-            max: voltage_max,
-            min: voltage_min,
-            //nameLocation:'start',
-            scale: true,
-            splitLine: {
-              show: false
-            },
-            axisLine: {
-              onZero: false,
-              lineStyle: {
-                color: '#fff',
-                width: 1
-              }
-            },
-            axisTick: {
-              alignWithLabel: true,
-              length: 8,
-              lineStyle: {
-                color: '#fff',
-                width: 1
-              }
+          //nameLocation:'start',
+          scale: true,
+          axisLine: {
+            onZero: false,
+            lineStyle: {
+              color: '#fff',
+              width: 1
             }
-
-          }
-        ],
-        series: [
-          {
-            name: '温度',
-            type: 'line',
-            symbolSize: 0,
-            animation: false,
-            areaStyle: {
-              opacity: 0.3,
-              color: {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [{
-                  offset: 0, color: '#CB21D2' // 0% 处的颜色
-                }, {
-                  offset: 1, color: '#041323' // 100% 处的颜色
-                }],
-                globalCoord: false // 缺省为 false
-              }
-            },
-            itemStyle: {
-              color: '#CB21D2'
-            },
-            lineStyle: {
-              color: '#CB21D2',
-              width: 3
-            },
-            data: tempArr
           },
-          {
-            name: '电压',
-            type: 'line',
-            yAxisIndex: 1,
-            symbolSize: 0,
-            animation: false,
-            areaStyle: {
-              opacity: 0.3,
-              color: {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [{
-                  offset: 0, color: '#45EBCA' // 0% 处的颜色
-                }, {
-                  offset: 1, color: '#041323' // 100% 处的颜色
-                }],
-                globalCoord: false // 缺省为 false
-              }
-            },
-            itemStyle: {
-              color: '#45EBCA'
-            },
+          axisTick: {
+            alignWithLabel: true,
+            length: 8,
             lineStyle: {
-              color: '#45EBCA',
-              width: 3
-            },
-            data: voltageArr
+              color: '#fff',
+              width: 1
+            }
           }
-        ]
-      };
+        },
+        {
+          name: '(V)',
+          type: 'value',
+          max: voltage_max,
+          min: voltage_min,
+          //nameLocation:'start',
+          scale: true,
+          splitLine: {
+            show: false
+          },
+          axisLine: {
+            onZero: false,
+            lineStyle: {
+              color: '#fff',
+              width: 1
+            }
+          },
+          axisTick: {
+            alignWithLabel: true,
+            length: 8,
+            lineStyle: {
+              color: '#fff',
+              width: 1
+            }
+          }
+
+        }
+      ],
+        series
+    :
+      [
+        {
+          name: '温度',
+          type: 'line',
+          symbolSize: 0,
+          animation: false,
+          areaStyle: {
+            opacity: 0.3,
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: '#CB21D2' // 0% 处的颜色
+              }, {
+                offset: 1, color: '#041323' // 100% 处的颜色
+              }],
+              globalCoord: false // 缺省为 false
+            }
+          },
+          itemStyle: {
+            color: '#CB21D2'
+          },
+          lineStyle: {
+            color: '#CB21D2',
+            width: 3
+          },
+          data: tempArr
+        },
+        {
+          name: '电压',
+          type: 'line',
+          yAxisIndex: 1,
+          symbolSize: 0,
+          animation: false,
+          areaStyle: {
+            opacity: 0.3,
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: '#45EBCA' // 0% 处的颜色
+              }, {
+                offset: 1, color: '#041323' // 100% 处的颜色
+              }],
+              globalCoord: false // 缺省为 false
+            }
+          },
+          itemStyle: {
+            color: '#45EBCA'
+          },
+          lineStyle: {
+            color: '#45EBCA',
+            width: 3
+          },
+          data: voltageArr
+        }
+      ]
+    }
+      ;
     });
   }
 

@@ -19,7 +19,7 @@ app.use('/*', function (req, res, next) {
 app.get('/machine/:machineId/session/last',function(req,res){
   var result =
       {
-        "seam_score_ok": false,
+        "seam_score_ok": true,
         "machine_name": '焊机A-006',
         "coil_id": '209152500_209041000',
 
@@ -448,7 +448,6 @@ app.get('/machine/:machineId/session/last',function(req,res){
         "v_volatility_level": 5,
         "seam_score": 60,
         "seam_score_hard_spec": 60,
-        "seam_score_ok": true,
         "seam_score_soft_spec": 80,
       }
     ;

@@ -10,9 +10,9 @@
   </div>
 </section>
 <section>
-  <div class="item-title space-between" [ngClass]="{'success-back':'data.seam_score_ok','error-back':'!data.seam_score_ok'}">
+  <div class="item-title space-between"  [ngClass]="{'success-back':data.seamScoreOk ,'error-back':!data.seamScoreOk }">
     <div class="center first-item">
-      <div *ngIf="'!data.seam_score_ok'">
+      <div *ngIf="!data.seamScoreOk ">
         <img class="alert"  src="../assets/alert.png" alt="警告">
       </div>
        <span style="font-weight:bold">上次钢卷号: {{data.coil_id}}</span>
