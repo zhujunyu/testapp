@@ -110,20 +110,21 @@ export class AppComponent implements OnInit, AfterViewInit {
           {
             name: '业务指标',
             type: 'gauge',
-            detail: {formatter:'{value}'},
             data: [{value: this.data.seam_score, name: '焊接质量评分'}],
             axisTick:{
               show: false,
               lineStyle:{
-                color:'rgba(128, 128, 128, 0.5)'
+                color: 'rgba(128, 128, 128, 0.5)'
               }
             },
             axisLine:{
               lineStyle:{
-                color:[[this.data.seam_score_hard_spec/100, '#DE503A'], [this.data.seam_score_soft_spec/100, '#F8E71C'], [1, '#94C92B']]
+                color: [[this.data.seam_score_hard_spec/100, '#DE503A'], [this.data.seam_score_soft_spec/100, '#F8E71C'], [1, '#94C92B']],
+                width: 20
               }
             },
             splitLine:{
+              length: 20,
               lineStyle:{
                 color:'rgba（0,0,0,0）'
               }
@@ -132,7 +133,11 @@ export class AppComponent implements OnInit, AfterViewInit {
               opacity: 0.8
             },
             title: {
-              color: '#ffffff'
+              color: '#ffffff',
+              fontSize:18
+            },
+            detail: {
+              fontSize: 100
             }
           }
         ]
