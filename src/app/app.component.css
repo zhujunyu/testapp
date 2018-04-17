@@ -149,8 +149,17 @@
 
 .rander-chart{
   width:100%;
-  height:100%;
-  position: absolute;
+  height:80%;
+  float: left;
+}
+
+.rander-down{
+  height: 20%;
+  width: 100%;
+  display: block;
+  color: red;
+  text-align: center;
+  float: left;
 }
 
 .line-chart{
