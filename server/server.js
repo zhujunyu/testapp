@@ -31,6 +31,7 @@ app.get('/machine/:machineId/session/last',function(req,res){
         "predict_pressure": 8.0,
         "predict_speed": 15.0,
         "predict_swaging_pressure": 2.0,
+        "quality_des":3,
         "sampling_data": [
           {
             "temp": 270.0,
@@ -449,6 +450,12 @@ app.get('/machine/:machineId/session/last',function(req,res){
         "seam_score": 60,
         "seam_score_hard_spec": 60,
         "seam_score_soft_spec": 80,
+        "l2_speed":200,
+        "l2_current":14,
+        "l2_wel_pressure":8,
+        "l2_clamp_pressure":1,
+        "l2_overlap_amount":10,
+        "l2_overlap_comp":8,
       }
     ;
   res.json(result);

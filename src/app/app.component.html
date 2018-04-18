@@ -74,7 +74,11 @@
       <!--<span class="star-label-up">{{data.seam_score}}</span>-->
       <!--<span class="star-label-down">焊接质量评分</span>-->
     <!--</div>-->
-    <div class="rander-down">aaaaa</div>
+    <div class="rander-down" >
+      <div class="rander-child-down" *ngIf="data.quality_des==1||data.quality_des==2||data.quality_des==3">焊缝曲线合理性 <span class="alert-red">【很差】</span></div>
+      <div class="rander-child-down" *ngIf="data.quality_des==2||data.quality_des==3">焊缝曲线稳定性<span class="alert-yellow">【较差】</span></div>
+      <div class="rander-child-down" *ngIf="data.quality_des==3">焊缝曲线有效性<span class="alert-green">【欠佳】</span></div>
+    </div>
   </div>
 
   <div id="line">
@@ -99,5 +103,15 @@
     <span class="item">-</span>
     <span class="item">-</span>
     <span class="item">-</span>
+  </div>
+
+  <div class="item-data space-between next-data">
+    <span class="first-item">L2下发参数</span>
+    <span class="item">{{data.l2_current}}</span>
+    <span class="item">{{data.l2_speed}}</span>
+    <span class="item">{{data.l2_wel_pressure}}</span>
+    <span class="item">{{data.l2_clamp_pressure}}</span>
+    <span class="item">{{data.l2_overlap_amount}}</span>
+    <span class="item">{{data.l2_overlap_comp}}</span>
   </div>
 </section>

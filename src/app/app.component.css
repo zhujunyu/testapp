@@ -161,6 +161,24 @@
   text-align: center;
   float: left;
 }
+.rander-child-down{
+  height: 33.3%;
+  width: 100%;
+  display: block;
+  color: white;
+  text-align: center;
+  float: left;
+}
+.alert—red{
+  color: red;
+}
+
+.alert-yellow{
+  color: yellow;
+}
+.alert-green{
+  color: green;
+}
 
 .line-chart{
   width:100%;
